@@ -4,6 +4,19 @@ const API_KEY = 'e02bb07d813f5255844c6d19ab9395ab';
 let baseURL = 'https://api.themoviedb.org/3/';
 let imageURL = 'https://image.tmdb.org/t/p/w300';
 let recommImageURL = 'https://image.tmdb.org/t/p/w185';
+// NOTE - booststrap config
+function addToWatchmsg(btn,id) {
+    const toastTrigger = btn;
+    const toastLiveExample = document.getElementById("liveToast");
+    toastLiveExample.setAttribute(id);
+    if (toastTrigger) {
+        toastTrigger.addEventListener("click", () => {
+            const toast = new bootstrap.Toast(toastLiveExample);
+
+            toast.show();
+        });
+    }
+}
 
 $(document).ready(() => {
     sessionStorage.setItem('type', 'all');
@@ -216,7 +229,9 @@ function getMovieDetails(){
                     <p>${details["title"]}</p>
 
                     <button class="watchButton" 
-                        onclick="addToWatch('${details["title"]}','${details["id"]}');"
+                        onclick="addToWatch('${details["title"]}','${
+                details["id"]
+            }');"
                     >
                     Add to Watchlist</button>
                 </div>
@@ -224,7 +239,9 @@ function getMovieDetails(){
                 <div class="movieWrapper">
                     <div class="movieFlex">
                         <div class="movieImage">
-                            <img src="${imageURL + String(postPath)}" alt="No image found." loading="lazy">
+                            <img src="${
+                                imageURL + String(postPath)
+                            }" alt="No image found." loading="lazy">
                         </div>
 
                         <div class="movieText">
@@ -233,10 +250,16 @@ function getMovieDetails(){
                                 <hr>
                                 
                                 <p><strong>Genre: </strong>${genres}</p>
-                                <p><strong>Runtime: </strong>${details["runtime"]} min</p>
+                                <p><strong>Runtime: </strong>${
+                                    details["runtime"]
+                                } min</p>
                                 <p><strong>Language: </strong>${language}</p>
-                                <p><strong>Release Date: </strong>${details["release_date"]}</p>
-                                <p><strong>Average Rating: </strong>${details["vote_average"]}</p>
+                                <p><strong>Release Date: </strong>${
+                                    details["release_date"]
+                                }</p>
+                                <p><strong>Average Rating: </strong>${
+                                    details["vote_average"]
+                                }</p>
                                 <p><strong>Production Country: </strong>${prod_country}</p>
                                 <p><strong>Production Company: </strong>${prod_company}</p>
                             </div>
@@ -364,6 +387,8 @@ function addToWatch(movie_name, movie_id) {
     watched = document.querySelector('.watchButton');
     watched.classList.add('watched');
     watched.innerText = 'Added to Watchlist';
+    watched.setAttribut(movie_name);
+    addToWatchmsg(watched,movie_id);
 }
 // NOTE - Visualización de la watchlist
 function showWatchlist() {
