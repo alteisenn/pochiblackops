@@ -382,13 +382,24 @@ function getTVdetails() {
 }
 // NOTE - Añadiendo watchlist
 function addToWatch(movie_name, movie_id) {
+    Toastify({
+        text: 'Añadido a la watchlist',
+        duration: 4000,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        style: {
+            background: "black",
+            color: "aqua",
+            border: "1px aqua solid",
+        },
+    }).showToast();
     localStorage.setItem(movie_name, movie_id);
 
     watched = document.querySelector('.watchButton');
     watched.classList.add('watched');
     watched.innerText = 'Added to Watchlist';
     watched.setAttribut(movie_name);
-    addToWatchmsg(watched,movie_id);
+    addToWatchmsg(watched, movie_id);
 }
 // NOTE - Visualización de la watchlist
 function showWatchlist() {
@@ -431,7 +442,20 @@ function showWatchlist() {
 // NOTE - Removiendo de la watchlist
 function removeFromWatched(title) {
     localStorage.removeItem(title);
-    window.location.reload();
+    Toastify({
+        text: 'Eliminando de la watchlist',
+        duration: 4000,
+        gravity: "top", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        style: {
+            background: "black",
+            color: "aqua",
+            border: "1px aqua solid",
+        },
+    }).showToast();
+    setTimeout(function () {
+        window.location.reload();
+    }, 3000);
 }
 // FIXME - getCastCrew
 function getCastCrew(movie_id) {
