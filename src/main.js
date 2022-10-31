@@ -57,23 +57,31 @@ function getMovies(searchText, page=1) {
 
                     output += `
                         <div class="movie">
-                            <img class="image" src=${imageURL + String(posterPath)} alt="No image found." loading="lazy">
+                            <img class="image" src=${
+                                imageURL + String(posterPath)
+                            } alt="No image found." loading="lazy">
 
                             <div class="ratingFlex">
-                                <h4 class="title">${data["results"][i]["title"]}</h4>
-                                <div class="rating">${data["results"][i]["vote_average"]}</div>
+                                <h4 class="title">${
+                                    data["results"][i]["title"]
+                                }</h4>
+                                <div class="rating">${
+                                    data["results"][i]["vote_average"]
+                                }</div>
                             </div>
 
-                            <button class="detailsButton" onclick="selectedMovie('${data["results"][i]["id"]}')">More Details</button>
+                            <button class="detailsButton btn btn-primary" onclick="selectedMovie('${
+                                data["results"][i]["id"]
+                            }')">More Details</button>
                         </div>
                     `;
                     $('.result').html(output);
                     $('footer').show();
                 }
                 pageinate = `
-                    <button class="prevBtn" onclick="prevBtn()">Prev</button>
+                    <button class="prevBtn btn btn-primary" onclick="prevBtn()">Prev</button>
                     Page <span class="currentPage"></span> of <span class="totalPages"></span>
-                    <button class="nextBtn" onclick="nextBtn()">Next</button>
+                    <button class="nextBtn btn btn-primary" onclick="nextBtn()">Next</button>
                 `;
                 $('.pagination').html(pageinate);
             }
@@ -410,14 +418,16 @@ function showWatchlist() {
 
                     watch += `
                         <div class="movie">
-                            <img class="image" src=${imageURL + String(w_poster)} alt="No image found." loading="lazy">
+                            <img class="image" src=${
+                                imageURL + String(w_poster)
+                            } alt="No image found." loading="lazy">
 
                             <div class="ratingFlex">
                                 <h4 class="title">${w_title}</h4>
                                 <div class="rating">${w_rating}</div>
                             </div>
 
-                            <button class="detailsButton" onclick="removeFromWatched('${w_title}')">Remove</button>
+                            <button class="detailsButton btn btn-primary" onclick="removeFromWatched('${w_title}')">Remove</button>
                         </div>
                     `;
                     $('.watchlist').html(watch);
@@ -624,9 +634,15 @@ function getMovieRecommendations() {
                    
                     showRecomm += `
                         <div class="movie">
-                            <img class="recommImage" src=${recommImageURL + String(posterPath)} alt="No image found." loading="lazy">
-                            <h4 class="title">${recomm["results"][i]["title"]}</h4>
-                            <button class="detailsButton" onclick="selectedMovie('${recomm["results"][i]["id"]}')">More Details</button>
+                            <img class="recommImage" src=${
+                                recommImageURL + String(posterPath)
+                            } alt="No image found." loading="lazy">
+                            <h4 class="title">${
+                                recomm["results"][i]["title"]
+                            }</h4>
+                            <button class="detailsButton btn btn-primary" onclick="selectedMovie('${
+                                recomm["results"][i]["id"]
+                            }')">More Details</button>
                         </div>
                     `;
                     $('.movieRecommendations').html(showRecomm);
@@ -659,9 +675,15 @@ function getTVrecommendations() {
                    
                     showRecomm += `
                         <div class="movie">
-                            <img class="recommImage" src=${recommImageURL + String(posterPath)} alt="No image found." loading="lazy">
-                            <h4 class="title">${recomm["results"][i]["name"]}</h4>
-                            <button class="detailsButton" onclick="selectedTV('${recomm["results"][i]["id"]}')">More Details</button>
+                            <img class="recommImage" src=${
+                                recommImageURL + String(posterPath)
+                            } alt="No image found." loading="lazy">
+                            <h4 class="title">${
+                                recomm["results"][i]["name"]
+                            }</h4>
+                            <button class="detailsButton btn btn-primary" onclick="selectedTV('${
+                                recomm["results"][i]["id"]
+                            }')">More Details</button>
                         </div>
                     `;
                     $('.movieRecommendations').html(showRecomm);
@@ -831,14 +853,22 @@ function showMovieByGenre(genre_id, page=1) {
                    
                     output += `
                         <div class="movie">
-                            <img class="image" src=${imageURL+ String(posterPath)} alt="No image found." loading="lazy">
+                            <img class="image" src=${
+                                imageURL + String(posterPath)
+                            } alt="No image found." loading="lazy">
 
                             <div class="ratingFlex">
-                                <h4 class="title">${discover["results"][i]["title"]}</h4>
-                                <div class="rating">${discover["results"][i]["vote_average"]}</div>
+                                <h4 class="title">${
+                                    discover["results"][i]["title"]
+                                }</h4>
+                                <div class="rating">${
+                                    discover["results"][i]["vote_average"]
+                                }</div>
                             </div>
 
-                            <button class="detailsButton" onclick="selectedMovie('${discover["results"][i]["id"]}')">More Details</button>
+                            <button class="detailsButton btn btn-primary" onclick="selectedMovie('${
+                                discover["results"][i]["id"]
+                            }')">More Details</button>
                         </div>
                     `;
                     $('.trending').html(output);
@@ -902,14 +932,22 @@ function showMovieByCategory(category, page=1) {
                    
                     output += `
                         <div class="movie">
-                            <img class="image" src=${imageURL + String(posterPath)} alt="No image found." loading="lazy">
+                            <img class="image" src=${
+                                imageURL + String(posterPath)
+                            } alt="No image found." loading="lazy">
 
                             <div class="ratingFlex">
-                                <h4 class="title">${cat["results"][i]["title"]}</h4>
-                                <div class="rating">${cat["results"][i]["vote_average"]}</div>
+                                <h4 class="title">${
+                                    cat["results"][i]["title"]
+                                }</h4>
+                                <div class="rating">${
+                                    cat["results"][i]["vote_average"]
+                                }</div>
                             </div>
 
-                            <button class="detailsButton" onclick="selectedMovie('${cat["results"][i]["id"]}')">More Details</button>
+                            <button class="detailsButton btn btn-primary" onclick="selectedMovie('${
+                                cat["results"][i]["id"]
+                            }')">More Details</button>
                         </div>
                     `;
                     $('.trending').html(output);
@@ -994,14 +1032,20 @@ function showMovieByTypeTime(appendType, appendTime, page=1) {
 
                     output += `
                         <div class="movie">
-                            <img class="image" src=${imageURL + String(posterPath)} alt="No image found." loading="lazy">
+                            <img class="image" src=${
+                                imageURL + String(posterPath)
+                            } alt="No image found." loading="lazy">
 
                             <div class="ratingFlex">
                                 <h4 class="title">${title}</h4>
-                                <div class="rating">${trend["results"][i]["vote_average"]}</div>
+                                <div class="rating">${
+                                    trend["results"][i]["vote_average"]
+                                }</div>
                             </div>
 
-                            <button class="detailsButton" onclick="selectedMovie('${trend["results"][i]["id"]}')">More Details</button>
+                            <button class="detailsButton btn btn-primary" onclick="selectedMovie('${
+                                trend["results"][i]["id"]
+                            }')">More Details</button>
                         </div>
                     `;
                 }
@@ -1012,14 +1056,20 @@ function showMovieByTypeTime(appendType, appendTime, page=1) {
 
                     output += `
                         <div class="movie">
-                            <img class="image" src=${imageURL + String(posterPath)} alt="No image found." loading="lazy">
+                            <img class="image" src=${
+                                imageURL + String(posterPath)
+                            } alt="No image found." loading="lazy">
 
                             <div class="ratingFlex">
                                 <h4 class="title">${name}</h4>
-                                <div class="rating">${trend["results"][i]["vote_average"]}</div>
+                                <div class="rating">${
+                                    trend["results"][i]["vote_average"]
+                                }</div>
                             </div>
 
-                            <button class="detailsButton" onclick="selectedTV('${trend["results"][i]["id"]}')">More Details</button>
+                            <button class="detailsButton btn btn-primary" onclick="selectedTV('${
+                                trend["results"][i]["id"]
+                            }')">More Details</button>
                         </div>
                     `;
                 }
