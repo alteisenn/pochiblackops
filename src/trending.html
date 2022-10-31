@@ -41,10 +41,10 @@
     <div class="browse">
         <h2>Trending</h2>
 
-        <div class="section">
+        <div class="section text-white">
             <form id="type-form">
                 <label>Type:</label>
-                    <select name="type" id="type" onchange="movieType(this)">
+                    <select class="form-select-lg" name="type" id="type" onchange="movieType(this)">
                         <option value="all" selected>All</option>
                         <option value="movie">Movie</option>
                         <option value="tv">TV</option>
@@ -56,7 +56,7 @@
             
             <form id="time-form">
                 <label>Time:</label>
-                    <select name="time" id="time" onchange="movieTime(this)">
+                    <select class="form-select-lg" name="time" id="time" onchange="movieTime(this)">
                         <option value="day" selected>Day</option>
                         <option value="week">Week</option>
                     </select>
@@ -68,11 +68,11 @@
         <hr>
     </div>
     <!-- NOTE - Contenedor de tendencias -->
-    <div class="showTrending">
+    <div class="showTrending mx-0 container-fluid">
 
     </div>
     <!-- NOTE - Footer -->
-    <footer class="footer">
+    <footer class="footer container-fluid">
         &lt;/&gt; lincNx
     </footer>
 

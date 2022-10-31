@@ -18,7 +18,7 @@
 <body>
     <!-- NOTE - Creando la navbar -->
     <nav>
-        <div class="nav">
+        <div class="nav container-fluid">
             <div class="logo">
                 <a href="/index.html"><img src="/assets/icon.png" alt="" width="75" height="70"><span
                     class="blue">P</span>ochita<span class="blue">M</span>ovies</a>
@@ -37,31 +37,17 @@
             </div>
         </div>
     </nav>
-    <!-- NOTE - Pruebas -->
-    <div class="toast-container position-fixed bottom-0 end-0 p-3">
-        <div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-            <div class="toast-header">
-                <img src="..." class="rounded me-2" alt="...">
-                <strong class="me-auto">Bootstrap</strong>
-                <small>11 mins ago</small>
-                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
-            </div>
-            <div class="toast-body">
-                Hello, world! This is a toast message.
-            </div>
-        </div>
-    </div>
     <!-- NOTE - Contenedor de las peliculas  -->
-    <div class="movieContainer">
+    <div class="movieContainer mx-0 container-fluid">
 
     </div>
     <!-- NOTE - Botones para ver las recomendaciones y|o las reviews -->
-    <div class="rrbuttons">
-        <button class="reviewButton" onclick="showHideReview()">Show Reviews</button>
-        <button class="recommButton" onclick="showHideRecomm()">Show Recommendations</button>
+    <div class="rrbuttons mx-0 container-fluid">
+        <button class="reviewButton btn btn-primary" onclick="showHideReview()">Show Reviews</button>
+        <button class="recommButton btn btn-primary" onclick="showHideRecomm()">Show Recommendations</button>
     </div>
     <!-- NOTE - Contenedor de las recomedaciones -->
-    <div class="recommendations hideRecomm">
+    <div class="recommendations hideRecomm container-fluid">
         <div class="recommTitle">Recommendations:</div>
         
         <hr class="recommHR">
@@ -69,7 +55,7 @@
         <div class="movieRecommendations"></div>
     </div>
     <!-- NOTE - Contenedor de las reviews -->
-    <div class="reviews hideReview">
+    <div class="reviews hideReview container-fluid">
         <div class="reviewTitle">Reviews:</div>
         
         <hr class="reviewHR">

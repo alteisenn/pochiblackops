@@ -19,17 +19,14 @@
 <body>
     <!-- NOTE - Navbar -->
     <nav>
-        <div class="nav">
+        <div class="nav container-fluid">
             <div class="logo">
                 <a href="/index.html"><img src="/assets/icon.png" alt="" width="75" height="70">
                     <span class="blue">P</span>ochita<span class="blue">M</span>ovies</a>
                 </div>
-                
                 <ul class="nav-links">
                     <li><a href="src/search.html" target="_self" class="search-link">Search</a></li>
-                    
                     <li><a href="src/trending.html" target="_self" class="trending-link">Trending</a></li>
-                    
                     <li><a href="src/watchlist.html" target="_self" class="watchlist-link">Watchlist</a></li>
                 </ul>
                 
@@ -41,13 +38,13 @@
             </div>
         </nav>
     <!-- NOTE - Menu de Upcoming -->
-    <div class="browse">
+    <div class="browse text-white">
         <h2 class="changeTitle">Upcoming</h2>
         
         <div class="section">
             <form id="category-form">
                 <label>Category:</label>
-                <select name="category" id="category" onchange="movieCategory(this)">
+                <select class="form-select-lg" name="category" id="category" onchange="movieCategory(this)">
                     <option value="upcoming" selected>Upcoming</option>
                     <!-- <option value="now_playing">Now Playing</option> -->
                     <option value="popular">Popular</option>
@@ -59,7 +56,7 @@
             
             <form id="genre-form">
                 <label>Genre:</label>
-                <select name="genre" id="genre" onchange="movieGenre(this)">
+                <select class="form-select-lg" name="genre" id="genre" onchange="movieGenre(this)">
                     <option selected value="">Choose</option>
                     <option value="Action">Action</option>
                     <option value="Drama">Drama</option>
@@ -70,26 +67,22 @@
             </form>
         </div>
     </div>
-    <!-- NOTE - pruebas -->
-    <div id="msg">
-        
-    </div>
-    
+
     <div class="browseHR">
         <hr>
     </div>
     <!-- NOTE - Contenedor de tendencia -->
-    <div class="trending">
+    <div class="trending mx-0 container-fluid">
         
     </div>
     <!-- NOTE - Contenedor de paginación -->
-    <div class="pagination">
-        <button class="prevBtn" onclick="prevBtn()">Prev</button>
+    <div class="pagination container-fluid d-flex justify-content-center">
+        <button class="prevBtn btn btn-primary" onclick="prevBtn()">Prev</button>
         Page <span class="currentPage"></span> of <span class="totalPages"></span>
-        <button class="nextBtn" onclick="nextBtn()">Next</button>
+        <button class="nextBtn btn btn-primary" onclick="nextBtn()">Next</button>
     </div>
     <!-- NOTE - Footer -->
-    <footer class="footer">
+    <footer class="footer container-fluid">
         &lt;/&gt; lincNx
     </footer>
     

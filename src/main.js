@@ -4,19 +4,6 @@ const API_KEY = 'e02bb07d813f5255844c6d19ab9395ab';
 let baseURL = 'https://api.themoviedb.org/3/';
 let imageURL = 'https://image.tmdb.org/t/p/w300';
 let recommImageURL = 'https://image.tmdb.org/t/p/w185';
-// NOTE - booststrap config
-function addToWatchmsg(btn,id) {
-    const toastTrigger = btn;
-    const toastLiveExample = document.getElementById("liveToast");
-    toastLiveExample.setAttribute(id);
-    if (toastTrigger) {
-        toastTrigger.addEventListener("click", () => {
-            const toast = new bootstrap.Toast(toastLiveExample);
-
-            toast.show();
-        });
-    }
-}
 
 $(document).ready(() => {
     sessionStorage.setItem('type', 'all');
@@ -228,7 +215,7 @@ function getMovieDetails(){
                 <div class="movieTitle">
                     <p>${details["title"]}</p>
 
-                    <button class="watchButton" 
+                    <button class="watchButton btn btn-primary" 
                         onclick="addToWatch('${details["title"]}','${
                 details["id"]
             }');"
